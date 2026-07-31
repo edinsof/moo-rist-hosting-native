@@ -286,7 +286,7 @@ if /i "!NOAUTH!"=="true" (
 
 :: Run both RIST commands in background using start /B (no new windows) with encryption
 echo Starting RIST tools with encryption...
-start /B "" "librist\tools\ristreceiver.exe" -i "!RECEIVER_URL!" -o "rist://127.0.0.1:!LOOPBACK_PORT!" -r "127.0.0.1:!STATS_PORT!" -p !RIST_PROFILE!
+start /B "" "librist\tools\ristreceiver.exe" -v 6 -b 1800 -i "!RECEIVER_URL!" -o "rist://127.0.0.1:!LOOPBACK_PORT!" -r "127.0.0.1:!STATS_PORT!" -p !RIST_PROFILE!
 start /B "" "librist\tools\ristsender.exe" -v -1 -i "udp://@127.0.0.1:!LOOPBACK_PORT!" -o "rist://@0.0.0.0:!RIST_SENDER_PORT!?cname=moo-rist-relay&aes-type=!ENCRYPTION!&secret=!SECRET!" -p !RIST_PROFILE!
 
 echo All processes are running in the background:
