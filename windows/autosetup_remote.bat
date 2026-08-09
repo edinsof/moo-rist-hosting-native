@@ -279,9 +279,9 @@ timeout /t 3 /nobreak >nul
 
 :: Build receiver URL based on NOAUTH setting
 if /i "!NOAUTH!"=="true" (
-    set "RECEIVER_URL=rist://@0.0.0.0:!RIST_RECEIVER_PORT!?rtt-min=100&aes-type=!ENCRYPTION!&secret=!SECRET!"
+    set "RECEIVER_URL=rist://@0.0.0.0:!RIST_RECEIVER_PORT!?rtt-min=70&rtt-max=1200&aes-type=!ENCRYPTION!&secret=!SECRET!"
 ) else (
-    set "RECEIVER_URL=rist://@0.0.0.0:!RIST_RECEIVER_PORT!?rtt-min=100&username=!USERNAME!&password=!PASSWORD!"
+    set "RECEIVER_URL=rist://@0.0.0.0:!RIST_RECEIVER_PORT!?rtt-min=70&rtt-max=1200&username=!USERNAME!&password=!PASSWORD!"
 )
 
 :: Run both RIST commands in background using start /B (no new windows) with encryption

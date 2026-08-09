@@ -245,9 +245,9 @@ sleep 3
 
 # Build receiver URL based on NOAUTH setting
 if [ "$NOAUTH" = "true" ]; then
-    RECEIVER_URL="rist://@0.0.0.0:$RIST_RECEIVER_PORT?rtt-min=100&aes-type=$ENCRYPTION&secret=$SECRET"
+    RECEIVER_URL="rist://@0.0.0.0:$RIST_RECEIVER_PORT?rtt-min=70&rtt-max=1200&aes-type=$ENCRYPTION&secret=$SECRET"
 else
-    RECEIVER_URL="rist://@0.0.0.0:$RIST_RECEIVER_PORT?rtt-min=100&username=$USERNAME&password=$PASSWORD"
+    RECEIVER_URL="rist://@0.0.0.0:$RIST_RECEIVER_PORT?rtt-min=70&rtt-max=1200&username=$USERNAME&password=$PASSWORD"
 fi
 
 # Run both RIST commands in background with encryption
